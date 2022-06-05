@@ -10,61 +10,91 @@ class AddScreen extends StatelessWidget {
     late String titleText;
     late String description;
     return Scaffold(
-      backgroundColor: Colors.lightBlue,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Notes'),
         centerTitle: true,
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.pinkAccent[100],
       ),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            TextField(
-              decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: 'Enter Title',
-                  hintStyle: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white)),
-              style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
-              onChanged: (value) {
-                titleText = value;
-              },
-            ),
-            Expanded(
+            Container(
+              margin: EdgeInsets.all(15),
+              padding: EdgeInsets.all(15),
+              height: 95,
+              decoration: BoxDecoration(
+                color: Colors.lightBlue.shade100,
+                borderRadius: BorderRadius.circular(15),
+              ),
               child: TextField(
                 decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Enter Description',
-                    hintStyle: TextStyle(fontSize: 18, color: Colors.white)),
-                style: TextStyle(fontSize: 18, color: Colors.white),
-                onChanged: (value) {
-                  description = value;
-                },
-              ),
-            ),
-            TextButton(
-              onPressed: () {
-                Provider.of<NotesOperation>(context, listen: false)
-                    .addNewNote(titleText, description);
-                Navigator.pop(context);
-              },
-              style: TextButton.styleFrom(backgroundColor: Colors.white),
-              child: Text(
-                'Add Note',
+                    hintText: 'Enter Title',
+                    hintStyle: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black)),
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.lightBlue),
+                    color: Colors.black),
+                onChanged: (value) {
+                  titleText = value;
+                },
               ),
-            )
+            ),
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.all(15),
+                padding: EdgeInsets.all(15),
+                height: 95,
+                decoration: BoxDecoration(
+                  color: Colors.lightBlue.shade100,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Enter Description',
+                      hintStyle:
+                          TextStyle(fontSize: 18, color: Colors.black54)),
+                  style: TextStyle(fontSize: 18, color: Colors.black54),
+                  keyboardType: TextInputType.multiline,
+                  maxLines: 20,
+                  onChanged: (value) {
+                    description = value;
+                  },
+                ),
+              ),
+            ),
+            Container(
+              height: 55,
+              decoration: BoxDecoration(
+                color: Colors.lightBlue.shade100,
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: TextButton(
+                onPressed: () {
+                  Provider.of<NotesOperation>(context, listen: false)
+                      .addNewNote(titleText, description);
+                  Navigator.pop(context);
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Colors.lightBlue.shade100),
+                child: Text(
+                  'Add Note',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
+              ),
+            ),
           ],
         ),
       ),
