@@ -23,7 +23,7 @@ Abhiram
 Screenshots of the app:<br>
 <div align="center">
   <img width="285" alt="Screenshot 2023-07-13 at 5 39 32 PM" src="https://github.com/ShubhKanodia/NotesApp/assets/110471762/0ea9712f-d4fb-4331-8e9a-8576266f2e4d">
-  <img width="20">
+  <img width="20">&nbsp
   <img width="285" alt="Screenshot 2023-07-13 at 5 41 22 PM" src="https://github.com/ShubhKanodia/NotesApp/assets/110471762/4bd0997b-c2d8-44f0-8aa3-beb3895f300d">
 </div>
 <p align="center"><img width="286" alt="Screenshot 2023-07-13 at 5 42 30 PM" src="https://github.com/ShubhKanodia/NotesApp/assets/110471762/44876f79-077a-49dd-b549-1e1a063d3de3"></p>
