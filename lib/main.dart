@@ -15,6 +15,7 @@ class Notes extends StatelessWidget {
     return ChangeNotifierProvider<NotesOperation>(
       create: (context) => NotesOperation(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: HomeScreen(),
       ),
     );
